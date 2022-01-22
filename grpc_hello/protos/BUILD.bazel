@@ -1,0 +1,6 @@
+load("@rules_proto//proto:defs.bzl", "proto_library")
+
+proto_library(
+    name = "grpc_hello_proto",
+    srcs = ["grpc_hello.proto"],
+)
