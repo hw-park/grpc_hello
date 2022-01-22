@@ -4,3 +4,8 @@ proto_library(
     name = "grpc_hello_proto",
     srcs = ["grpc_hello.proto"],
 )
+
+cc_proto_library(
+    name = "grpc_hello_cc_proto",
+    deps = [":grpc_hello_proto"],
+)
