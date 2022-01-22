@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package grpc_hello;
+
+message HelloRequest {
+  string id = 1;
+}
+
+message HelloResponse {
+  string response = 1;
+}
+
+service HelloService {
+  rpc Hello(HelloRequest) returns (HelloResponse) {}
+}
