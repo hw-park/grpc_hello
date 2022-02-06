@@ -2,11 +2,11 @@
 
 #include <cstdlib>
 #include <string>
+#include <utility>
 
 #include "gflags/gflags.h"
 #include "glog/logging.h"
 #include "grpcpp/grpcpp.h"
-#include "grpcpp/health_check_service_interface.h"
 
 DEFINE_string(host, "0.0.0.0:8080", "Host ip and port.");
 DEFINE_string(id, "darling", "Id.");
