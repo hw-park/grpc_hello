@@ -1,5 +1,5 @@
-#ifndef GRPC_HELLO_SERVER_HELLO_SERVER_H_
-#define GRPC_HELLO_SERVER_HELLO_SERVER_H_
+#ifndef GRPC_HELLO_GRPC_HELLO_SERVER_HELLO_SERVER_H_
+#define GRPC_HELLO_GRPC_HELLO_SERVER_HELLO_SERVER_H_
 
 #include "grpc_hello/protos/grpc_hello.grpc.pb.h"
 #include "grpcpp/grpcpp.h"
@@ -17,4 +17,4 @@ class HelloServiceImpl final : public ::grpc_hello::HelloService::Service {
 }  // namespace server
 }  // namespace grpc_hello
 
-#endif  // GRPC_HELLO_SERVER_HELLO_SERVER_H_
+#endif  // GRPC_HELLO_GRPC_HELLO_SERVER_HELLO_SERVER_H_

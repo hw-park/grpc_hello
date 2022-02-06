@@ -1,4 +1,4 @@
-#include "hello_server.h"
+#include "grpc_hello/server/hello_server.h"
 
 #include "grpc_hello/protos/grpc_hello.grpc.pb.h"
 #include "grpcpp/grpcpp.h"
