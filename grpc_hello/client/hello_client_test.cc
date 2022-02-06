@@ -1,6 +1,7 @@
 #include "grpc_hello/client/hello_client.h"
 
 #include <memory>
+#include <utility>
 
 #include "grpc_hello/protos/grpc_hello.grpc.pb.h"
 #include "grpc_hello/protos/grpc_hello_mock.grpc.pb.h"
