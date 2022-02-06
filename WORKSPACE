@@ -16,13 +16,16 @@ git_repository(
 
 git_repository(
     name = "com_github_grpc_grpc",
-    branch = "master",
+    branch = "v1.43.x",
     remote = "https://github.com/grpc/grpc.git",
 )
 
 load("@com_github_grpc_grpc//bazel:grpc_deps.bzl", "grpc_deps")
+
 grpc_deps()
+
 load("@com_github_grpc_grpc//bazel:grpc_extra_deps.bzl", "grpc_extra_deps")
+
 grpc_extra_deps()
 
 git_repository(
