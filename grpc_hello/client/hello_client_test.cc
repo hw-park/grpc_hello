@@ -25,7 +25,9 @@ TEST(HelloServiceClient, Works) {
 
   response.set_response("Hello, darling");
   auto stub_ = std::unique_ptr<MockHelloServiceStub>(new MockHelloServiceStub);
-  EXPECT_CALL(*stub_, Hello(_, _, _)).Times(1).WillOnce(DoAll(SetArgPointee<2>(response), Return(Status::OK)));
+  EXPECT_CALL(*stub_, Hello(_, _, _))
+      .Times(1)
+      .WillOnce(DoAll(SetArgPointee<2>(response), Return(Status::OK)));
 
   HelloServiceClient client(std::move(stub_));
   std::string response_string = client.Hello("darling");

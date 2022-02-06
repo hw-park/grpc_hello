@@ -21,7 +21,8 @@ using ::grpc::Status;
 using ::grpc_hello::client::HelloServiceClient;
 
 void RunClient() {
-  HelloServiceClient client(::grpc::CreateChannel(FLAGS_host, ::grpc::InsecureChannelCredentials()));
+  HelloServiceClient client(
+      ::grpc::CreateChannel(FLAGS_host, ::grpc::InsecureChannelCredentials()));
   std::string response_string = client.Hello(FLAGS_id);
 
   LOG(INFO) << "Message received: " << response_string;
