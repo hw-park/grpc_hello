@@ -3,6 +3,7 @@
 
 #include <memory>
 #include <string>
+#include <utility>
 
 #include "grpc_hello/protos/grpc_hello.grpc.pb.h"
 #include "grpcpp/grpcpp.h"
@@ -13,7 +14,7 @@ namespace client {
 class HelloServiceClient {
  public:
   explicit HelloServiceClient(std::shared_ptr<::grpc::Channel> channel)
-      : explicit HelloServiceClient(HelloService::NewStub(channel)) {}
+      : HelloServiceClient(HelloService::NewStub(channel)) {}
   explicit HelloServiceClient(std::unique_ptr<HelloService::StubInterface> stub)
       : stub_(std::move(stub)) {}
   std::string Hello(const std::string &id);
