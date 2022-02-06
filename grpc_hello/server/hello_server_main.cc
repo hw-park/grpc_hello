@@ -1,10 +1,9 @@
-#include "grpc_hello/server/hello_server.h"
-
 #include <cstdlib>
 #include <string>
 
 #include "gflags/gflags.h"
 #include "glog/logging.h"
+#include "grpc_hello/server/hello_server.h"
 #include "grpcpp/ext/proto_server_reflection_plugin.h"
 #include "grpcpp/grpcpp.h"
 #include "grpcpp/health_check_service_interface.h"

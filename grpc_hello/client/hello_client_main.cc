@@ -1,11 +1,10 @@
-#include "grpc_hello/client/hello_client.h"
-
 #include <cstdlib>
 #include <string>
 #include <utility>
 
 #include "gflags/gflags.h"
 #include "glog/logging.h"
+#include "grpc_hello/client/hello_client.h"
 #include "grpcpp/grpcpp.h"
 
 DEFINE_string(host, "0.0.0.0:8080", "Host ip and port.");
