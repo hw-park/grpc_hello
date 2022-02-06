@@ -12,10 +12,10 @@ namespace client {
 
 class HelloServiceClient {
  public:
-  explicit HelloServiceClient(std::shared_ptr<::grpc::Channel> channel) :
-      HelloServiceClient(HelloService::NewStub(channel)) {}
-  explicit HelloServiceClient(std::unique_ptr<HelloService::StubInterface> stub) :
-      stub_(std::move(stub)) {}
+  explicit HelloServiceClient(std::shared_ptr<::grpc::Channel> channel)
+      : explicit HelloServiceClient(HelloService::NewStub(channel)) {}
+  explicit HelloServiceClient(std::unique_ptr<HelloService::StubInterface> stub)
+      : stub_(std::move(stub)) {}
   std::string Hello(const std::string &id);
 
  private:
