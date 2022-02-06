@@ -14,6 +14,10 @@ cc_proto_library(
 cc_grpc_library(
     name = "grpc_hello_cc_grpc",
     srcs = [":grpc_hello_proto"],
+    generate_mocks = True,
     grpc_only = True,
+    visibility = [
+        "//grpc_hello/server:__subpackages__",
+    ],
     deps = [":grpc_hello_cc_proto"],
 )
