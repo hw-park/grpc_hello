@@ -17,6 +17,7 @@ cc_grpc_library(
     generate_mocks = True,
     grpc_only = True,
     visibility = [
+        "//grpc_hello/client:__subpackages__",
         "//grpc_hello/server:__subpackages__",
     ],
     deps = [":grpc_hello_cc_proto"],

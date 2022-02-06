@@ -20,8 +20,8 @@ TEST(HelloServiceServer, Works) {
   HelloResponse response;
 
   request.set_id("darling");
-  Status status = service.Hello(&context, &request, &response);
 
+  Status status = service.Hello(&context, &request, &response);
   ASSERT_TRUE(status.ok());
   EXPECT_EQ(response.response(), "Hello, darling");
 }
