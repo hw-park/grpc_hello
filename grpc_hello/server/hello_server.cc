@@ -2,6 +2,8 @@
 
 #include <string>
 
+#include "glog/logging.h"
+
 namespace grpc_hello {
 namespace server {
 
@@ -17,7 +19,7 @@ using ::grpc_hello::HelloResponse;
 
   LOG(INFO) << "Message set: " << response_string;
 
-  response->set_response(response);
+  response->set_response(response_string);
 
   return Status::OK;
 }
