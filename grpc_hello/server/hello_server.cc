@@ -13,7 +13,12 @@ using ::grpc_hello::HelloResponse;
 ::grpc::Status HelloServiceImpl::Hello(ServerContext *context,
                                        const HelloRequest *request,
                                        HelloResponse *response) {
-  response->set_response("Hello, " + request->id());
+  std::string response_string = "Hello, " + request->id();
+
+  LOG(INFO) << "Message set: " << response_string;
+
+  response->set_response(response);
+
   return Status::OK;
 }
 
