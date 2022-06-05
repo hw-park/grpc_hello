@@ -13,7 +13,7 @@ flags.DEFINE_string('id', 'darling', 'Id.')
 def main(argv):
     client = hello_client_py.HelloServiceClient(
         grpc.insecure_channel(FLAGS.host))
-    response_string = client.hello(FLAGS.id);
+    response_string = client.hello(FLAGS.id)
 
     logging.info('Message received: ' + FLAGS.id)
 

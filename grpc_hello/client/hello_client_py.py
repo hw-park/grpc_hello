@@ -5,6 +5,7 @@ import grpc
 
 
 class HelloServiceClient:
+
     def __init__(self, channel) -> None:
         self._stub = grpc_hello_pb2_grpc.HelloServiceStub(channel)
 
