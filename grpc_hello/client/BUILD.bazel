@@ -39,3 +39,32 @@ cc_test(
         "@com_google_googletest//:gtest_main",
     ],
 )
+
+py_binary(
+    name = "hello_client_py_main",
+    srcs = [
+        "hello_client_py_main.py",
+    ],
+    python_version = "PY3",
+    srcs_version = "PY2AND3",
+    deps = [
+        ":hello_client_py",
+        "@com_github_grpc_grpc//src/python/grpcio/grpc:grpcio",
+        "@io_abseil_py//absl:app",
+        "@io_abseil_py//absl/flags",
+        "@io_abseil_py//absl/logging",
+    ],
+)
+
+py_library(
+    name = "hello_client_py",
+    srcs = [
+        "hello_client_py.py",
+    ],
+    srcs_version = "PY2AND3",
+    deps = [
+        "//grpc_hello/protos:grpc_hello_py_grpc",
+        "@com_github_grpc_grpc//src/python/grpcio/grpc:grpcio",
+        "@io_abseil_py//absl/logging",
+    ],
+)
