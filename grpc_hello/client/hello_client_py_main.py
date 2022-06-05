@@ -15,7 +15,7 @@ def main(argv):
         grpc.insecure_channel(FLAGS.host))
     response_string = client.hello(FLAGS.id)
 
-    logging.info('Message received: ' + FLAGS.id)
+    logging.info('Message received: ' + response_string)
 
 
 if __name__ == '__main__':
