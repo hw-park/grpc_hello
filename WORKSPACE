@@ -30,18 +30,24 @@ grpc_extra_deps()
 
 git_repository(
     name = "com_google_absl",
-    branch = "master",
+    branch = "main",
     remote = "https://github.com/abseil/abseil-cpp.git",
 )
 
 git_repository(
     name = "com_google_googletest",
-    branch = "master",
+    branch = "main",
     remote = "https://github.com/google/googletest.git",
 )
 
 git_repository(
     name = "com_google_protobuf",
-    branch = "master",
+    branch = "main",
     remote = "https://github.com/protocolbuffers/protobuf.git",
+)
+
+git_repository(
+    name = "io_abseil_py",
+    branch = "main",
+    remote = "https://github.com/abseil/abseil-py.git",
 )
