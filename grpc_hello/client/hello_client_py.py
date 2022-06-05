@@ -1,7 +1,6 @@
 from absl import logging
 from grpc_hello.protos import grpc_hello_pb2_grpc
 from grpc_hello.protos import grpc_hello_pb2
-import grpc
 
 
 class HelloServiceClient:
