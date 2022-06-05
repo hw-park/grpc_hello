@@ -1,6 +1,4 @@
-from absl import app
-from absl import flags
-from absl import logging
+from absl import app, flags, logging
 from concurrent import futures
 from grpc_hello.protos import grpc_hello_pb2_grpc
 import grpc
