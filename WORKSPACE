@@ -16,7 +16,7 @@ git_repository(
 
 git_repository(
     name = "com_github_grpc_grpc",
-    branch = "v1.43.x",
+    branch = "v1.48.x",
     remote = "https://github.com/grpc/grpc.git",
 )
 
@@ -42,7 +42,7 @@ git_repository(
 
 git_repository(
     name = "com_google_protobuf",
-    branch = "main",
+    branch = "21.x",
     remote = "https://github.com/protocolbuffers/protobuf.git",
 )
 
