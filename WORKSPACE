@@ -16,7 +16,7 @@ git_repository(
 
 git_repository(
     name = "com_github_grpc_grpc",
-    branch = "v1.48.x",
+    branch = "master",
     remote = "https://github.com/grpc/grpc.git",
 )
 
@@ -27,6 +27,16 @@ grpc_deps()
 load("@com_github_grpc_grpc//bazel:grpc_extra_deps.bzl", "grpc_extra_deps")
 
 grpc_extra_deps()
+
+git_repository(
+    name = "rules_python",
+    branch = "main",
+    remote = "https://github.com/bazelbuild/rules_python.git",
+)
+
+load("@rules_python//python:repositories.bzl", "py_repositories")
+
+py_repositories()
 
 git_repository(
     name = "com_google_absl",
