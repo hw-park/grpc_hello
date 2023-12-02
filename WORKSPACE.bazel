@@ -19,13 +19,9 @@ git_repository(
     branch = "master",
     remote = "https://github.com/grpc/grpc.git",
 )
-
 load("@com_github_grpc_grpc//bazel:grpc_deps.bzl", "grpc_deps")
-
 grpc_deps()
-
 load("@com_github_grpc_grpc//bazel:grpc_extra_deps.bzl", "grpc_extra_deps")
-
 grpc_extra_deps()
 
 git_repository(
@@ -33,9 +29,7 @@ git_repository(
     branch = "main",
     remote = "https://github.com/bazelbuild/rules_python.git",
 )
-
 load("@rules_python//python:repositories.bzl", "py_repositories")
-
 py_repositories()
 
 git_repository(
@@ -60,4 +54,39 @@ git_repository(
     name = "io_abseil_py",
     branch = "main",
     remote = "https://github.com/abseil/abseil-py.git",
+)
+
+git_repository(
+    name = "rules_pkg",
+    branch = "main",
+    remote = "https://github.com/bazelbuild/rules_pkg.git",
+)
+load("@rules_pkg//:deps.bzl", "rules_pkg_dependencies")
+rules_pkg_dependencies()
+
+git_repository(
+    name = "rules_oci",
+    branch = "main",
+    remote = "https://github.com/bazel-contrib/rules_oci.git"
+)
+load("@rules_oci//oci:dependencies.bzl", "rules_oci_dependencies")
+rules_oci_dependencies()
+load("@rules_oci//oci:repositories.bzl", "LATEST_CRANE_VERSION", "oci_register_toolchains")
+oci_register_toolchains(
+    name = "oci",
+    crane_version = LATEST_CRANE_VERSION,
+    # Uncommenting the zot toolchain will cause it to be used instead of crane for some tasks.
+    # Note that it does not support docker-format images.
+    # zot_version = LATEST_ZOT_VERSION,
+)
+# You can pull your base images using oci_pull like this:
+load("@rules_oci//oci:pull.bzl", "oci_pull")
+oci_pull(
+    name = "distroless_base",
+    digest = "sha256:ccaef5ee2f1850270d453fdf700a5392534f8d1a8ca2acda391fbb6a06b81c86",
+    image = "gcr.io/distroless/base",
+    platforms = [
+        "linux/amd64",
+        "linux/arm64",
+    ],
 )
