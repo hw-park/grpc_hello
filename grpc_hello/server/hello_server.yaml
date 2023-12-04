@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-server
+  namespace: default
+  labels:
+    app: hello_server
+spec:
+  selector:
+    matchLabels:
+      app: hello_server
+  template:
+    metadata:
+      labels:
+        app: hello_server
+    spec:
+      containers:
+        - name: hello-server
+          command: ["/hello_server_main"]
+          image: hello_server:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080
+          resources:
+            limits:
+              cpu: "100m"
+              memory: "64Mi"
+            requests:
+              cpu: "100m"
+              memory: "64Mi"
