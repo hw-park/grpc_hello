@@ -1,4 +1,4 @@
-load("@rules_oci//oci:defs.bzl", "oci_image", "oci_push", "oci_tarball")
+load("@rules_oci//oci:defs.bzl", "oci_image", "oci_tarball")
 load("@rules_pkg//:pkg.bzl", "pkg_tar")
 
 cc_binary(
@@ -52,16 +52,16 @@ pkg_tar(
 
 oci_image(
     name = "hello_server_image",
-    base = "@distroless_base",
+    base = "@distroless_cc",
     tars = [
-        ':hello_server_tar'
+        ":hello_server_tar",
     ],
 )
 
 oci_tarball(
     name = "hello_server_tarball",
     image = ":hello_server_image",
-    repo_tags = ["//grpc_hello/server:latest"],
+    repo_tags = ["hello_server:latest"],
 )
 
 py_binary(
