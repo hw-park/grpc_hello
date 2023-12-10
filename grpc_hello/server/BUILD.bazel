@@ -52,7 +52,7 @@ pkg_tar(
 
 oci_image(
     name = "hello_server_image",
-    base = "@distroless_cc",
+    base = "@debian_latest",
     tars = [
         ":hello_server_tar",
     ],
